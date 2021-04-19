@@ -66,6 +66,14 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
       }
+
+	  function cambiarCasillas(casilla1,casilla2){
+		  var casillaTemp= document.getElementById(casilla1).className;
+		  document.getElementById(casilla1).className=document.getElementById(casilla2).className;
+		  document.getElementById(casilla2).className=casillaTemp;
+
+	  }
+
     </script>
   </body>
 </html>

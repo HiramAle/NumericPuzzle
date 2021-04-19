@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="398" height="243" viewBox="0 0 398 243">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c19435;
+      }
+
+      .cls-1, .cls-7 {
+        font-size: 70px;
+        font-family: BungeeShade-Regular, Bungee Shade;
+      }
+
+      .cls-2, .cls-7 {
+        fill: #bb6a35;
+      }
+
+      .cls-3 {
+        fill: #bb5a42;
+      }
+
+      .cls-4 {
+        fill: #b06571;
+      }
+
+      .cls-5 {
+        fill: #8d6076;
+      }
+
+      .cls-6 {
+        fill: #6e7581;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1" data-name="Grupo 1" transform="translate(-15 -279)">
+    <text id="Numeric" class="cls-1" transform="translate(214 393)"><tspan x="-198.73" y="0">N</tspan><tspan class="cls-2" y="0">u</tspan><tspan class="cls-3" y="0">m</tspan><tspan class="cls-4" y="0">e</tspan><tspan class="cls-5" y="0">r</tspan><tspan class="cls-6" y="0">i</tspan><tspan y="0">c</tspan></text>
+    <text id="Puzzle" class="cls-7" transform="translate(214 458)"><tspan x="-164.22" y="0">P</tspan><tspan class="cls-3" y="0">uz</tspan><tspan class="cls-4" y="0">z</tspan><tspan class="cls-5" y="0">l</tspan><tspan class="cls-6" y="0">e</tspan></text>
+  </g>
+</svg>

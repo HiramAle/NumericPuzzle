@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+    <link rel="icon" type="image/png" href="Resources/Images/icon.png" />
+    <title>Numeric Puzzle</title>
+  </head>
+  <body>
+    <div id="div-header">
+      <img src="Resources/Images/image-header.svg" alt="header" />
+    </div>
+
+    <div id="div-form">
+      <h1>Write your name</h1>
+      <input id="inputname" type="text" placeholder="Kike" />
+      <h1>Choose your game mode</h1>
+      <input name="radiomode" id="Up" type="radio" checked="checked" />
+      <label for="Up">Ascending order</label>
+      <input name="radiomode" id="Down" type="radio" />
+      <label for="Down">Descending order</label>
+      <a href="#div-game">
+        <input type="image" src="Resources/Images/image-play-button.svg" />
+      </a>
+    </div>
+
+    <div id="div-game">
+      <div id="div-score">
+        <h1 id="playername">Kike</h1>
+        <h1>&nbsp| Your moves:&nbsp</h1>
+        <h1 id="playermoves">0</h1>
+      </div>
+      <div id="game-figure">
+        <div class="tile" id="tile-1">1</div>
+        <div class="tile" id="tile-2">2</div>
+        <div class="tile" id="tile-3">3</div>
+        <div class="tile" id="tile-4">4</div>
+        <div class="tile" id="tile-5">5</div>
+        <div class="tile" id="tile-6">6</div>
+        <div class="tile" id="tile-7">7</div>
+        <div class="tile" id="tile-8">8</div>
+      </div>
+
+      <input
+        type="image"
+        src="Resources/Images/menu-button.svg"
+        alt="menu"
+        onclick="topFunction()"
+      />
+    </div>
+
+    <script>
+      var username = document.getElementById("inputname").value;
+
+      function playgame() {
+        if (username == "") {
+          alert("Validar");
+          return false;
+        }
+
+        document.getElementById("playername").innerHTML(username);
+      }
+
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+  </body>
+</html>

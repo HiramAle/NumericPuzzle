@@ -1,0 +1,99 @@
+/* Estilos generales */
+
+:root {
+  --main-bg-color: #222222;
+  --main-txt-color: beige;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  font-family: Montserrat;
+  color: var(--main-txt-color);
+  padding-left: 5%;
+  padding-right: 5%;
+  overflow-y: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#div-form {
+  text-align: center;
+}
+
+h1 {
+  font: 2em;
+}
+
+input[type="text"] {
+  background-color: var(--main-txt-color);
+  border-radius: 1em;
+  text-align: center;
+  color: var(--main-bg-color);
+  font-size: 2em;
+  width: 90%;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+  outline-width: 0;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  display: block;
+  font-size: 2em;
+  cursor: pointer;
+  margin: 0.5em;
+  border-radius: 1em;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="radio"]:checked + label {
+  background-color: beige;
+  color: #222222;
+  font-weight: bold;
+}
+
+input[type="image"] {
+  width: 80%;
+  margin-top: 4em;
+}
+
+input[type="image"]:focus {
+  outline-width: 0;
+}
+
+#game-figure {
+  width: 100%;
+  background-color: var(--main-txt-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  border-radius: 1.5em;
+}
+
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-bg-color);
+  font-size: 2em;
+  cursor: pointer;
+  margin: 0.5em;
+  height: 3.25em;
+  border-radius: 0.75em;
+}
+
+#div-game {
+  text-align: center;
+}
+
+#div-score {
+  display: flex;
+  justify-content: center;
+}

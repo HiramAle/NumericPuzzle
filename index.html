@@ -5,25 +5,22 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="CSS/style.css" />
     <link rel="icon" type="image/png" href="Resources/Images/icon.png" />
-    <title>Kikenceles</title>
+    <title>Numeric Puzzle</title>
   </head>
   <body>
     <div id="div-header">
       <img src="Resources/Images/image-header.svg" alt="header" />
     </div>
 
-
     <div id="div-form">
       <h1>Write your name</h1>
       <input id="inputname" type="text" placeholder="Kike" />
       <h1>Choose your game mode</h1>
-      <input name="radiomode" id="Up" type="radio" checked="checked" />
+      <input name="radiomode" id="Up" type="radio" checked="checked" value="0"/>
       <label for="Up">Ascending order</label>
-      <input name="radiomode" id="Down" type="radio" />
+      <input name="radiomode" id="Down" type="radio" value="1" />
       <label for="Down">Descending order</label>
-      <a href="#div-game">
-        <input type="image" src="Resources/Images/image-play-button.svg" />
-      </a>
+        <input type="image" src="Resources/Images/image-play-button.svg"  onclick="playGame()" />
     </div>
 
     <div id="div-game">
@@ -31,7 +28,13 @@
         <h1 id="playername">Kike</h1>
         <h1>&nbsp| Your moves:&nbsp</h1>
         <h1 id="playermoves">0</h1>
+		
       </div>
+	  <div  id = "time-game">
+		<h1>Your time&nbsp</h1>
+		<h1 id ="timer">00:00</h1>
+	  </div>
+	  
       <div id="game-figure">
         <div class="tile posicion1" id="tile-1" onclick="clickCasilla(1)" >1</div>
         <div class="tile posicion2" id="tile-2" onclick="clickCasilla(2)">2</div>
@@ -41,13 +44,14 @@
         <div class="tile posicion6" id="tile-6" onclick="clickCasilla(6)">6</div>
         <div class="tile posicion7" id="tile-7" onclick="clickCasilla(7)">7</div>
         <div class="tile posicion8" id="tile-8" onclick="clickCasilla(8)">8</div>
-        <div class="tile posicion9" id="tile-w" onclick="clickCasilla(9)"></div>
+        <div class="tile posicion9" id="tile-9" onclick="clickCasilla(9)"></div>
       </div>
 
       <input
         type="image"
         src="Resources/Images/menu-button.svg"
         alt="menu"
+		id = "menu"
         onclick="topFunction()"
       />
     </div>

@@ -36,8 +36,13 @@ input[type="text"] {
   transition: all 0.3s ease-in-out;
 }
 
+input[type="text"]:hover {  
+	transform: scale(1.1);
+}
+
 input[type="text"]:focus {
   outline-width: 0;
+  transform: scale(1.1);
 }
 
 input[type="radio"] {
@@ -87,6 +92,8 @@ input[type="image"]:focus {
   margin: 0.5em;
   height: 3.25em;
   border-radius: 0.75em;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
 }
 
 #div-game {
@@ -95,6 +102,11 @@ input[type="image"]:focus {
 
 #div-score {
   display: flex;
+  justify-content: center;
+}
+
+#time-game{
+	display: flex;
   justify-content: center;
 }
 
@@ -176,4 +188,12 @@ grid-column-end: 3;
 grid-row-start: 3;
 grid-row-end: 3
 
+}
+
+
+#menu{
+	margin: 0;
+	margin-bottom: 0;
+	padding: 0;
+	width: 50%;
 }

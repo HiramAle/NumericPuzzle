@@ -94,14 +94,15 @@ function playGame() {
 	var div3x3game = document.getElementById("div-game3x3");
 	if (nameInput.value != "") {
 		if (matrixmode.checked) {
-			div3x3game.style.opacity = "100%";
+			div3x3game.style.display = "block";
 			startTimer();
 			document.getElementById("div-game3x3").scrollIntoView();
 			nameLabel.innerHTML = nameInput.value;
 			shuffle();
 		}else{
+			div3x3game.style.display = "none";
 			document.getElementById("div-game4x4").scrollIntoView();
-			div3x3game.style.opacity = "0%";
+			
 			nameLabel4x4.innerHTML = nameInput.value;
 			startTimer();
 		}

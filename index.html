@@ -32,7 +32,7 @@
         <h1 id="playermoves">0</h1>
       </div>
       <div id="game-figure">
-        <div class="tile" id="tile-1">1</div>
+        <div class="tile" id="tile-1" onclick="clickCasilla(1)" >1</div>
         <div class="tile" id="tile-2">2</div>
         <div class="tile" id="tile-3">3</div>
         <div class="tile" id="tile-4">4</div>
@@ -40,6 +40,7 @@
         <div class="tile" id="tile-6">6</div>
         <div class="tile" id="tile-7">7</div>
         <div class="tile" id="tile-8">8</div>
+        <div class="tile" id="tile-w"></div>
       </div>
 
       <input
@@ -71,7 +72,14 @@
 		  var casillaTemp= document.getElementById(casilla1).className;
 		  document.getElementById(casilla1).className=document.getElementById(casilla2).className;
 		  document.getElementById(casilla2).className=casillaTemp;
+	  }
 
+	  function clickCasilla(idCasilla){
+		  var casilla = document.getElementById("tile-"+idCasilla).className;
+		  if(casilla!="tile-w"){
+			  cambiarCasillas("tile-w",casilla);
+		  }
+		  return;
 	  }
 
     </script>

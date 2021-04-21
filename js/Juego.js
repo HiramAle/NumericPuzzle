@@ -175,6 +175,7 @@ function checkIfWin() {
 
 		if (count == 9) {
 			showModal();
+			stopTimer();
 		}
 	} else {
 

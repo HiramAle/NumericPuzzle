@@ -12,10 +12,12 @@ body {
   padding-left: 5%;
   padding-right: 5%;
   overflow-y: hidden;
+  height: 100%;
 }
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 #div-form {
@@ -51,11 +53,14 @@ input[type="radio"] {
 
 label {
   display: block;
-  font-size: 2em;
+  font-size: 100%;
   cursor: pointer;
   margin: 0.5em;
   border-radius: 1em;
   transition: all 0.3s ease-in-out;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  width: 100%;
 }
 
 input[type="radio"]:checked + label {
@@ -73,14 +78,24 @@ input[type="image"]:focus {
   outline-width: 0;
 }
 
-#game-figure {
+#game-figure3x3 {
   width: 100%;
+  aspect-ratio: 1/1;
   background-color: var(--main-txt-color);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   border-radius: 1.5em;
 }
+#game-figure4x4 {
+	width: 100%;
+	aspect-ratio: 1/1;
+	background-color: var(--main-txt-color);
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	border-radius: 1.5em;
+  }
 
 .tile {
   display: flex;
@@ -90,19 +105,54 @@ input[type="image"]:focus {
   font-size: 2em;
   cursor: pointer;
   margin: 0.5em;
-  height: 3.25em;
   border-radius: 0.75em;
-  transition: all 0.3s ease-in-out;
   font-weight: bold;
+  animation: fadeIn ease 100s;
+  transition: all 1s ease-in-out;
+}
+.tile:active:focus:hover{
+	transform: translate(100px);
 }
 
-#div-game {
+.tile4x4 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--main-bg-color);
+	font-size: 2em;
+	cursor: pointer;
+	margin: 0.3em;
+	border-radius: 0.4em;
+	font-weight: bold;
+	animation: fadeIn ease 100s;
+	transition: all 1s ease-in-out;
+  }
+
+@keyframes tileAnimation{
+	0%   {background-color:red; left:0px; top:0px;}
+	25%  {background-color:yellow; left:200px; top:0px;}
+	50%  {background-color:blue; left:200px; top:200px;}
+	75%  {background-color:green; left:0px; top:200px;}
+	100% {background-color:red; left:0px; top:0px;}
+}
+
+#div-game3x3 {
   text-align: center;
 }
 
 #div-score {
   display: flex;
   justify-content: center;
+}
+
+#order-div{
+	display: flex;
+  justify-content: center;
+}
+
+#matrix-div{
+	display: flex;
+	justify-content: center;
 }
 
 #time-game{
@@ -197,3 +247,33 @@ grid-row-end: 3
 	padding: 0;
 	width: 50%;
 }
+
+.screen{
+	height: 100%;
+}
+
+#modal{
+	display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#modal-content{
+	background-color: var(--main-txt-color);
+	color: var(--main-bg-color);
+	margin: auto;
+	padding: 20px;
+	border-radius: 2em;
+	width: 80%;
+	height: 20%;
+	text-align: center;
+}
+

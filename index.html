@@ -8,22 +8,33 @@
     <title>Numeric Puzzle</title>
   </head>
   <body>
-    <div id="div-header">
-      <img src="Resources/Images/image-header.svg" alt="header" />
-    </div>
+	  <div id="first-div" class="screen" >
+		<div id="div-header">
+			<img src="Resources/Images/image-header.svg" alt="header" />
+		  </div>
+	  
+		  <div id="div-form">
+			<h1>Write your name</h1>
+			<input id="inputname" type="text" placeholder="Kike" />
+			<h1>Choose your game mode</h1>
+			<div id="order-div" >
+				<input name="radiomode" id="Up" type="radio" checked="checked" value="0"/>
+				<label for="Up">Ascending</label>
+				<input name="radiomode" id="Down" type="radio" value="1" />
+				<label for="Down">Descending</label>
+			</div>
+			<div id="matrix-div" >
+				<input name="matrixmode" id="3x3" type="radio" checked="checked" value="0"/>
+				<label for="3x3">3 x 3</label>
+				<input name="matrixmode" id="4x4" type="radio" value="1" />
+				<label for="4x4">4 x 4</label>
+			</div>
+			
+			  <input type="image" src="Resources/Images/image-play-button.svg"  onclick="playGame()" />
+		  </div>
+	  </div>
 
-    <div id="div-form">
-      <h1>Write your name</h1>
-      <input id="inputname" type="text" placeholder="Kike" />
-      <h1>Choose your game mode</h1>
-      <input name="radiomode" id="Up" type="radio" checked="checked" value="0"/>
-      <label for="Up">Ascending order</label>
-      <input name="radiomode" id="Down" type="radio" value="1" />
-      <label for="Down">Descending order</label>
-        <input type="image" src="Resources/Images/image-play-button.svg"  onclick="playGame()" />
-    </div>
-
-    <div id="div-game">
+    <div id="div-game3x3" class="screen" >
       <div id="div-score">
         <h1 id="playername">Kike</h1>
         <h1>&nbsp| Your moves:&nbsp</h1>
@@ -35,7 +46,7 @@
 		<h1 id ="timer">00:00</h1>
 	  </div>
 	  
-      <div id="game-figure">
+      <div id="game-figure3x3">
         <div class="tile posicion1" id="tile-1" onclick="clickCasilla(1)" >1</div>
         <div class="tile posicion2" id="tile-2" onclick="clickCasilla(2)">2</div>
         <div class="tile posicion3" id="tile-3" onclick="clickCasilla(3)">3</div>
@@ -55,7 +66,54 @@
         onclick="topFunction()"
       />
     </div>
+	<div id="div-game4x4" class="screen" >
+		<div id="div-score">
+			<h1 id="playername4x4">Kike</h1>
+			<h1>&nbsp| Your moves:&nbsp</h1>
+			<h1 id="playermoves4x4">0</h1>
+			
+		  </div>
+		  <div  id = "time-game">
+			<h1>Your time&nbsp</h1>
+			<h1 id ="timer4x4">00:00</h1>
+		  </div>
+		  
+		  <div id="game-figure4x4">
+			<div class="tile4x4" id="tile-1"  >1</div>
+			<div class="tile4x4" id="tile-2" >2</div>
+			<div class="tile4x4" id="tile-3" >3</div>
+			<div class="tile4x4" id="tile-4" >4</div>
+			<div class="tile4x4" id="tile-5" >5</div>
+			<div class="tile4x4" id="tile-6" >6</div>
+			<div class="tile4x4" id="tile-7" >7</div>
+			<div class="tile4x4" id="tile-8" >8</div>
+			<div class="tile4x4" id="tile-9" >9</div>
+			<div class="tile4x4" id="tile-10">10</div>
+			<div class="tile4x4" id="tile-11">11</div>
+			<div class="tile4x4" id="tile-12">12</div>
+			<div class="tile4x4" id="tile-13">13</div>
+			<div class="tile4x4" id="tile-14">14</div>
+			<div class="tile4x4" id="tile-15">15</div>
+			<div class="tile4x4" id="tile-16"></div>
+		  </div>
+	
+		  <input
+			type="image"
+			src="Resources/Images/menu-button.svg"
+			alt="menu"
+			id = "menu"
+			onclick="topFunction()"
+		  />
+	  </div>
 
+	  <div id="modal" >
+		  <div id="modal-content" >
+			<h1 id="modalUsername">Kike</h1>
+			<h1>You Win</h1>
+		  </div>
+	  </div>
+
+	  
     <script src="./js/Juego.js" defer></script>
   </body>
 </html>

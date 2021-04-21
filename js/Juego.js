@@ -68,7 +68,7 @@ function sepuedemover() {
 }
 
 function clickCasilla(idCasilla) {
-	var casilla = "tile-"+idCasilla;
+	var casilla = "tile-" + idCasilla;
 	var casilla2 = document.getElementById("tile-" + idCasilla).className;
 	let clickCasillaaux;
 
@@ -89,11 +89,24 @@ function clickCasilla(idCasilla) {
 function playGame() {
 	var nameInput = document.getElementById("inputname");
 	var nameLabel = document.getElementById("playername");
+	var nameLabel4x4 = document.getElementById("playername4x4");
+	var matrixmode = document.getElementById("3x3");
+	var div3x3game = document.getElementById("div-game3x3");
 	if (nameInput.value != "") {
-		startTimer();
-		window.scrollTo(0, document.body.scrollHeight);
-		nameLabel.innerHTML = nameInput.value;
-		shuffle();
+		if (matrixmode.checked) {
+			div3x3game.style.opacity = "100%";
+			startTimer();
+			document.getElementById("div-game3x3").scrollIntoView();
+			nameLabel.innerHTML = nameInput.value;
+			shuffle();
+		}else{
+			document.getElementById("div-game4x4").scrollIntoView();
+			div3x3game.style.opacity = "0%";
+			nameLabel4x4.innerHTML = nameInput.value;
+			startTimer();
+		}
+
+
 
 	} else {
 
@@ -117,6 +130,7 @@ window.onload = () => {
 
 function changeTime() {
 	var time = document.getElementById("timer");
+	var time4x4 = document.getElementById("timer4x4");
 	let secs = 0;
 	let min = 0;
 	s++;
@@ -124,9 +138,10 @@ function changeTime() {
 		m++;
 		s = 0;
 	}
-	secs = ('0'+s).slice(-2);
-	min = ('0'+m).slice(-2);
+	secs = ('0' + s).slice(-2);
+	min = ('0' + m).slice(-2);
 	time.innerHTML = `${min}:${secs}`;
+	time4x4.innerHTML = `${min}:${secs}`;
 }
 
 function startTimer() {
@@ -134,44 +149,53 @@ function startTimer() {
 	timeStarted = setInterval(changeTime, 1000);
 }
 
-function stopTimer(){
+function stopTimer() {
 	clearInterval(timeStarted);
 	m = 0;
 	s = 0;
 }
 
-function checkIfWin(){
-	var arrayId= [];
-	var arrayClassName= [];
+function checkIfWin() {
+	var order = document.getElementById("Up");
+	var arrayId = [];
+	var arrayClassName = [];
 
-	for(var j = 1; j<10;j++){
-		arrayId [j-1] =  document.getElementById("tile-"+j).id;
-		arrayClassName [j-1] =  document.getElementById("tile-"+j).className;
-	}
-	var count = 0;
-	for(var k = 1; k <10; k++){
-		
-		if(arrayClassName[k-1] == "tile posicion"+k){
-			count ++;
-			console.log(count);
+	if (order.checked) {
+		for (var j = 1; j < 10; j++) {
+			arrayId[j - 1] = document.getElementById("tile-" + j).id;
+			arrayClassName[j - 1] = document.getElementById("tile-" + j).className;
 		}
-		console.log(arrayId[k-1]);
-		console.log(arrayClassName[k-1]);
+		var count = 0;
+		for (var k = 1; k < 10; k++) {
+			if (arrayClassName[k - 1] == "tile posicion" + k) {
+				count++;
+				console.log(count);
+			}
+		}
+
+		if (count == 9) {
+			showModal();
+		}
+	} else {
+
 	}
 
-	if(count==9){
-		alert("win");
-	}else{
-		console.log(count);
-	}
 	
-	
-	
+
 
 }
+var modal = document.getElementById("modal");
 
+window.onclick = function(event) {
+	if (event.target == modal) {
+	  modal.style.display = "none";
+	}
+}
 
-
-
-
+function showModal (){
+	var nameInput = document.getElementById("inputname");
+	var name = document.getElementById("modalUsername");
+	modal.style.display = "block";
+	name.innerHTML = nameInput.value;
+}
 

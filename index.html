@@ -59,13 +59,15 @@
         <div class="tile posicion9" id="tile-9" onclick="clickCasilla(9)"></div>
       </div>
 
-      <input
+	  <div id="div-menu" >
+		<input
         type="image"
         src="Resources/Images/menu-button.svg"
         alt="menu"
 		id = "menu3x3"
         onclick="topFunction()"
       />
+
 	  <input
         type="image"
         src="Resources/Images/image-reset.svg"
@@ -73,6 +75,8 @@
 		id = "reset3x3"
         onclick="reset()"
       />
+	  </div>
+
     </div>
 	<div id="div-game4x4" class="screen" >
 		<div id="div-score">
@@ -106,21 +110,23 @@
 		  </div>
 
 		  
-	
-		  <input
+		  <div id="div-menu4x4" >
+			<input
 			type="image"
 			src="Resources/Images/menu-button.svg"
 			alt="menu"
 			id = "menu4x4"
 			onclick="topFunction()"
 		  />
+	
 		  <input
-        type="image"
-        src="Resources/Images/image-reset.svg"
-        alt="reset"
-		id = "reset3x3"
-        onclick="reset()"
-      />
+			type="image"
+			src="Resources/Images/image-reset.svg"
+			alt="reset"
+			id = "reset4x4"
+			onclick="reset()"
+		  />
+		  </div>
 	  </div>
 
 	  <div id="modal" >

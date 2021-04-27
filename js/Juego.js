@@ -308,3 +308,16 @@ function showModal() {
   modal.style.display = "block";
   name.innerHTML = nameInput.value;
 }
+
+function reset(){
+	movesCount=0;
+	movesCount = 0;
+  var movesLabel = document.getElementById("playermoves");
+  var movesLabel4x4 = document.getElementById("playermoves4x4");
+  movesLabel.innerHTML = movesCount;
+  movesLabel4x4.innerHTML = movesCount;
+  stopTimer();
+  shuffle();
+  shuffle4x4;
+  startTimer();
+}

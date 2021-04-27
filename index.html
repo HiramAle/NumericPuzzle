@@ -4,13 +4,14 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="icon" type="image/png" href="Resources/Images/icon.png" />
     <title>Numeric Puzzle</title>
   </head>
   <body>
 	  <div id="first-div" class="screen" >
 		<div id="div-header">
-			<img src="Resources/Images/image-header.svg" alt="header" />
+			<img id="imgH" src="Resources/Images/image-header.svg" alt="header" />
 		  </div>
 	  
 		  <div id="div-form">
@@ -62,8 +63,15 @@
         type="image"
         src="Resources/Images/menu-button.svg"
         alt="menu"
-		id = "menu"
+		id = "menu3x3"
         onclick="topFunction()"
+      />
+	  <input
+        type="image"
+        src="Resources/Images/image-reset.svg"
+        alt="reset"
+		id = "reset3x3"
+        onclick="reset()"
       />
     </div>
 	<div id="div-game4x4" class="screen" >
@@ -96,14 +104,23 @@
 			<div class="tile4x4 posicion4x4_15" id="tile4x4-15"onclick="clickCasilla4x4(15)">15</div>
 			<div class="tile4x4 posicion4x4_16" id="tile4x4-16"onclick="clickCasilla4x4(16)"></div>
 		  </div>
+
+		  
 	
 		  <input
 			type="image"
 			src="Resources/Images/menu-button.svg"
 			alt="menu"
-			id = "menu"
+			id = "menu4x4"
 			onclick="topFunction()"
 		  />
+		  <input
+        type="image"
+        src="Resources/Images/image-reset.svg"
+        alt="reset"
+		id = "reset3x3"
+        onclick="reset()"
+      />
 	  </div>
 
 	  <div id="modal" >

@@ -5,6 +5,24 @@
   --main-txt-color: beige;
 }
 
+#div-header{
+	margin-top: 20%;
+	margin-bottom: 20%;
+	width: 100%;
+}
+
+#imgH{
+	width: 100%;
+}
+
+#menu3x3{
+	margin-top: 20%;
+}
+
+#menu4x4{
+	margin-top: 20%;
+}
+
 body {
   background-color: var(--main-bg-color);
   font-family: Montserrat;
@@ -501,7 +519,7 @@ grid-row-end: 3
   	aspect-ratio: 1/1;
   	height: auto;
   }
-  #game-figure4x4{
+  #game-figure{
     width: 20%;
   	aspect-ratio: 1/1;
   	height: auto;

@@ -421,3 +421,79 @@ grid-row-end: 3
   grid-row-end: 4
 
 }
+
+@media (min-width:768px){
+  html{
+    max-width: 100%;
+  }
+  #first-div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+  }
+ #div-header{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #div-form{
+    max-width: 100%;
+  } 
+  #playbut{
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    margin-top: 20px;
+  }
+  #div-game3x3{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    max-width: 100%;
+    align-items: center;
+  } 
+  #div-game3x3 h1{
+    font-size: 40px;
+  } 
+  #game-figure3x3{
+    width: 50%;
+    height: 40%;
+    margin: 40px auto;
+  }
+  #div-game4x4{
+    max-width: 100%;
+  } 
+  #div-game4x4 h1{
+    font-size: 40px;
+  } 
+  #game-figure4x4{
+    width: 50%;
+    height: 40%;
+    margin: 0 auto;
+  }
+  #menu{
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1079px){
+ #div-header{
+    width: 60%;
+    height: 60%;
+    margin: 0 auto;
+  }
+  #div-form{
+    max-width: 100%;
+    font-size: 30px;
+  } 
+  #playbut{
+    width: 40%;
+    height: 40%;
+  }
+}

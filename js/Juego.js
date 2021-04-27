@@ -5,7 +5,9 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
   movesCount = 0;
   var movesLabel = document.getElementById("playermoves");
+  var movesLabel4x4 = document.getElementById("playermoves4x4");
   movesLabel.innerHTML = movesCount;
+  movesLabel4x4.innerHTML = movesCount;
   stopTimer();
 }
 
@@ -272,12 +274,12 @@ function checkIfWin4x4() {
 	var arrayClassName = [];
   
 	if (order.checked) {
-	  for (var j = 1; j < 16; j++) {
+	  for (var j = 1; j < 17; j++) {
 		arrayId[j - 1] = document.getElementById("tile4x4-" + j).id;
 		arrayClassName[j - 1] = document.getElementById("tile4x4-" + j).className;
 	  }
 	  var count = 0;
-	  for (var k = 1; k < 16; k++) {
+	  for (var k = 1; k < 17; k++) {
 		if (arrayClassName[k - 1] == "tile4x4 posicion4x4_" + k) {
 		  count++;
 		  console.log(count);

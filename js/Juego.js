@@ -250,17 +250,18 @@ function checkIfWin() {
   var order = document.getElementById("Up");
   var arrayId = [];
   var arrayClassName = [];
+  var count = 0;
 
   if (order.checked) {
     for (var j = 1; j < 10; j++) {
       arrayId[j - 1] = document.getElementById("tile-" + j).id;
       arrayClassName[j - 1] = document.getElementById("tile-" + j).className;
     }
-    var count = 0;
+    
     for (var k = 1; k < 10; k++) {
       if (arrayClassName[k - 1] == "tile posicion" + k) {
         count++;
-        console.log(count);
+     //   console.log('cuenta ascendente'+count);
       }
     }
 
@@ -269,23 +270,40 @@ function checkIfWin() {
       stopTimer();
     }
   } else {
+    for (var j = 1; j < 9; j++) {
+      arrayId[j - 1] = document.getElementById("tile-" + j).id;
+      arrayClassName[j - 1] = document.getElementById("tile-" + j).className;
+    }
+    for (var k = 1,h=8; k < 9; k++, h--) {
+      if (arrayClassName[k - 1] == "tile posicion" + h) {
+        count++;
+       // console.log('cuenta descendiente'+count);
+      }
+
+    }
+
+    if (count == 8) {
+      showModal();
+      stopTimer();
+    }
   }
 }
 function checkIfWin4x4() {
 	var order = document.getElementById("Up");
 	var arrayId = [];
 	var arrayClassName = [];
-  
+  var count = 0;
+
 	if (order.checked) {
 	  for (var j = 1; j < 17; j++) {
 		arrayId[j - 1] = document.getElementById("tile4x4-" + j).id;
 		arrayClassName[j - 1] = document.getElementById("tile4x4-" + j).className;
 	  }
-	  var count = 0;
+	 
 	  for (var k = 1; k < 17; k++) {
 		if (arrayClassName[k - 1] == "tile4x4 posicion4x4_" + k) {
 		  count++;
-		  console.log(count);
+		 // console.log(count);
 		}
 	  }
   
@@ -294,6 +312,22 @@ function checkIfWin4x4() {
 		stopTimer();
 	  }
 	} else {
+    for (var j = 1; j < 16; j++) {
+      arrayId[j - 1] = document.getElementById("tile4x4-" + j).id;
+      arrayClassName[j - 1] = document.getElementById("tile4x4-" + j).className;
+    }
+    for (var k = 1,h=15; k < 16; k++, h--) {
+      if (arrayClassName[k - 1] == "tile4x4 posicion4x4_" + h) {
+        count++;
+        //console.log('cuenta descendiente'+count);
+      }
+
+    }
+
+    if (count == 15) {
+      showModal();
+      stopTimer();
+    }
 	}
   }
 
@@ -321,6 +355,6 @@ function reset(){
   movesLabel4x4.innerHTML = movesCount;
   stopTimer();
   shuffle();
-  shuffle4x4;
+  shuffle4x4();
   startTimer();
 }

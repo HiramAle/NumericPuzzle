@@ -176,15 +176,18 @@ function playGame() {
   var nameLabel4x4 = document.getElementById("playername4x4");
   var matrixmode = document.getElementById("3x3");
   var div3x3game = document.getElementById("div-game3x3");
+  var div4x4game = document.getElementById("div-game4x4");
   if (nameInput.value != "") {
     if (matrixmode.checked) {
       div3x3game.style.display = "block";
+	  div4x4game.style.display = "none"
       startTimer();
       document.getElementById("div-game3x3").scrollIntoView();
       nameLabel.innerHTML = nameInput.value;
       shuffle();
     } else {
       div3x3game.style.display = "none";
+	  div4x4game.style.display = "block"
       document.getElementById("div-game4x4").scrollIntoView();
 
       nameLabel4x4.innerHTML = nameInput.value;
